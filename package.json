@@ -1,9 +1,9 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "My portfolio",
+  "description": "Brian's website",
   "main": "index.js",
-  "repository": "git@github.com:jdobrowner/portfolio.git",
+  "repository": "git@github.com:jdobrowner/brian.git",
   "scripts": {
     "start": "npm run watch:css & npm run start:dev-server",
     "start:dev-server": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",

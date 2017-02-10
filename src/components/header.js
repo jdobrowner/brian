@@ -4,13 +4,10 @@ class Header extends Component {
   constructor() {
     super();
   }
-  componentDidMount() {
-
-  }
   render() {
     return (
       <header>
-        <h1><span className="firstName">JASON </span><span className="lastName">DOBROWNER</span></h1>
+        <h1><span className="firstName">BRIAN </span><span className="lastName">FORBES</span></h1>
       </header>
     )
   }
