@@ -1,22 +1,17 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Header from './header';
-import Intro from './intro';
-import Projects from './projects';
-import About from './about-me';
-import Contact from './contact';
 
-function App() {
-  return (
-    <div className="app">
-      <div className="content-container">
-        <Header />
-        <Intro />
-        <Projects />
-        <About />
-        <Contact />
+class App extends Component {
+  render() {
+    return (
+      <div className="app">
+        <div className="content-container">
+          <Header />
+          {this.props.children}
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
 export default App;

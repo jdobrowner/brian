@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 const headshot = require('../../images/BrianForbes.png');
 
-export default class Projects extends Component {
+export default class Home extends Component {
   constructor() {
     super();
   }
   render() {
     return (
-      <div className="about">
-        <img src={headshot} />
+      <div className="home">
+        <img className="" src={headshot} />
       </div>
     )
   }
