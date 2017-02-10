@@ -362,8 +362,15 @@
 /* 5 */
 /***/ function(module, exports) {
 
+	/*
+	object-assign
+	(c) Sindre Sorhus
+	@license MIT
+	*/
+
 	'use strict';
 	/* eslint-disable no-unused-vars */
+	var getOwnPropertySymbols = Object.getOwnPropertySymbols;
 	var hasOwnProperty = Object.prototype.hasOwnProperty;
 	var propIsEnumerable = Object.prototype.propertyIsEnumerable;
 
@@ -384,7 +391,7 @@
 			// Detect buggy property enumeration order in older V8 versions.
 
 			// https://bugs.chromium.org/p/v8/issues/detail?id=4118
-			var test1 = new String('abc');  // eslint-disable-line
+			var test1 = new String('abc');  // eslint-disable-line no-new-wrappers
 			test1[5] = 'de';
 			if (Object.getOwnPropertyNames(test1)[0] === '5') {
 				return false;
@@ -413,7 +420,7 @@
 			}
 
 			return true;
-		} catch (e) {
+		} catch (err) {
 			// We don't expect any of the above to throw, but better to be safe.
 			return false;
 		}
@@ -433,8 +440,8 @@
 				}
 			}
 
-			if (Object.getOwnPropertySymbols) {
-				symbols = Object.getOwnPropertySymbols(from);
+			if (getOwnPropertySymbols) {
+				symbols = getOwnPropertySymbols(from);
 				for (var i = 0; i < symbols.length; i++) {
 					if (propIsEnumerable.call(from, symbols[i])) {
 						to[symbols[i]] = from[symbols[i]];
@@ -21522,11 +21529,11 @@
 
 	var _projects2 = _interopRequireDefault(_projects);
 
-	var _aboutMe = __webpack_require__(193);
+	var _aboutMe = __webpack_require__(183);
 
 	var _aboutMe2 = _interopRequireDefault(_aboutMe);
 
-	var _contact = __webpack_require__(195);
+	var _contact = __webpack_require__(185);
 
 	var _contact2 = _interopRequireDefault(_contact);
 
@@ -21549,23 +21556,6 @@
 	}
 
 	exports.default = App;
-
-
-	var cuteAnimals = ['cat', 'dog', 'hamster'];
-
-	var linkedList = {};
-
-	for (var i = cuteAnimals.length - 1; i >= 0; i--) {
-	  var node;
-	  // if the tail
-	  if (i === cuteAnimals.length - 1) {
-	    node = { value: cuteAnimals[i], pointer: null };
-	  } else {
-	    var previousNode = { value: cuteAnimals[i], pointer: linkedList[cuteAnimals[i + 1]].pointer };
-	    node = { value: cuteAnimals[i], pointer: previousNode };
-	  }
-	  linkedList[node.value.toString()] = node;
-	}
 
 /***/ },
 /* 180 */
@@ -21601,9 +21591,6 @@
 	  }
 
 	  _createClass(Header, [{
-	    key: "componentDidMount",
-	    value: function componentDidMount() {}
-	  }, {
 	    key: "render",
 	    value: function render() {
 	      return _react2.default.createElement(
@@ -21615,12 +21602,12 @@
 	          _react2.default.createElement(
 	            "span",
 	            { className: "firstName" },
-	            "JASON "
+	            "BRIAN "
 	          ),
 	          _react2.default.createElement(
 	            "span",
 	            { className: "lastName" },
-	            "DOBROWNER"
+	            "FORBES"
 	          )
 	        )
 	      );
@@ -21649,21 +21636,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function intro() {
-	  return _react2.default.createElement(
-	    "div",
-	    { className: "intro" },
-	    _react2.default.createElement(
-	      "p",
-	      null,
-	      "Hi, I'm a web developer based in Los Angeles.  Learn more about me below, or ",
-	      _react2.default.createElement(
-	        "a",
-	        { className: "email-me", href: "mailto:jdobrowner@gmail.com" },
-	        "email me"
-	      ),
-	      " if you'd like to talk."
-	    )
-	  );
+	  return _react2.default.createElement("div", { className: "intro" });
 	}
 
 	exports.default = intro;
@@ -21672,7 +21645,7 @@
 /* 182 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -21683,46 +21656,6 @@
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
-
-	var _project = __webpack_require__(183);
-
-	var _project2 = _interopRequireDefault(_project);
-
-	var _colors = __webpack_require__(184);
-
-	var _colors2 = _interopRequireDefault(_colors);
-
-	var _urls = __webpack_require__(185);
-
-	var _mm = __webpack_require__(186);
-
-	var _mm2 = _interopRequireDefault(_mm);
-
-	var _ca = __webpack_require__(187);
-
-	var _ca2 = _interopRequireDefault(_ca);
-
-	var _gs = __webpack_require__(188);
-
-	var _gs2 = _interopRequireDefault(_gs);
-
-	var _lu = __webpack_require__(189);
-
-	var _lu2 = _interopRequireDefault(_lu);
-
-	var _lq = __webpack_require__(190);
-
-	var _lq2 = _interopRequireDefault(_lq);
-
-	var _ab = __webpack_require__(191);
-
-	var _ab2 = _interopRequireDefault(_ab);
-
-	var _projects = __webpack_require__(192);
-
-	var projects = _interopRequireWildcard(_projects);
-
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21742,27 +21675,9 @@
 	  }
 
 	  _createClass(Projects, [{
-	    key: 'render',
+	    key: "render",
 	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'projects' },
-	        _react2.default.createElement('div', { className: 'spacer' }),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'sub-header' },
-	          _react2.default.createElement(
-	            'h3',
-	            null,
-	            'PROJECTS'
-	          )
-	        ),
-	        _react2.default.createElement(_project2.default, { title: 'Cellular Automaton', text: projects.cellularAutomaton, image: _ca2.default, url: _urls.urls.ca, repo: _urls.repos.ca, classProp: 'odd' }),
-	        _react2.default.createElement(_project2.default, { title: 'Mindful Moments', text: projects.mindfulMoments, image: _mm2.default, url: _urls.urls.mm, repo: _urls.repos.mm, classProp: 'even' }),
-	        _react2.default.createElement(_project2.default, { title: 'Galaxy Synth', text: projects.galaxySynth, image: _gs2.default, url: _urls.urls.gs, repo: _urls.repos.gs, classProp: 'odd' }),
-	        _react2.default.createElement(_project2.default, { title: 'Learn: Ukelele', text: projects.learnUkulele, image: _lu2.default, url: _urls.urls.lu, repo: _urls.repos.lu, classProp: 'even' }),
-	        _react2.default.createElement(_project2.default, { title: 'Alpha Bees', text: projects.alphaBees, image: _ab2.default, url: _urls.urls.ab, classProp: 'odd' })
-	      );
+	      return _react2.default.createElement("div", { className: "projects" });
 	    }
 	  }]);
 
@@ -21770,11 +21685,6 @@
 	}(_react.Component);
 
 	exports.default = Projects;
-
-
-	function testText() {
-	  return "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
-	}
 
 /***/ },
 /* 183 */
@@ -21800,298 +21710,7 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Projects = function (_Component) {
-	  _inherits(Projects, _Component);
-
-	  function Projects() {
-	    _classCallCheck(this, Projects);
-
-	    var _this = _possibleConstructorReturn(this, (Projects.__proto__ || Object.getPrototypeOf(Projects)).call(this));
-
-	    _this.buttons = _this.buttons.bind(_this);
-	    return _this;
-	  }
-
-	  _createClass(Projects, [{
-	    key: 'buttons',
-	    value: function buttons() {
-	      if (this.props.title !== 'Alpha Bees') {
-	        return _react2.default.createElement(
-	          'div',
-	          { className: 'buttons' },
-	          _react2.default.createElement(
-	            'a',
-	            { href: this.props.url, target: '_blank' },
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'button goThere' },
-	              'Check It Out'
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'a',
-	            { href: this.props.repo, target: '_blank' },
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'button repo' },
-	              'See The Code'
-	            )
-	          )
-	        );
-	      } else {
-	        return _react2.default.createElement(
-	          'div',
-	          { className: 'buttons' },
-	          _react2.default.createElement(
-	            'a',
-	            { href: this.props.url, target: '_blank' },
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'button-itunes goThere' },
-	              'See on iTunes Preview'
-	            )
-	          )
-	        );
-	      }
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        { className: this.props.classProp + ' project' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'box' },
-	          _react2.default.createElement(
-	            'h3',
-	            null,
-	            this.props.title
-	          ),
-	          _react2.default.createElement(
-	            'p',
-	            null,
-	            this.props.text.description
-	          ),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(
-	            'p',
-	            null,
-	            'Tools | ',
-	            _react2.default.createElement(
-	              'span',
-	              { className: 'tools' },
-	              this.props.text.tools
-	            )
-	          ),
-	          this.buttons()
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'box centered' },
-	          _react2.default.createElement(
-	            'div',
-	            null,
-	            _react2.default.createElement(
-	              'a',
-	              { href: this.props.url, target: '_blank' },
-	              _react2.default.createElement('img', { src: this.props.image, alt: this.props.title })
-	            )
-	          )
-	        )
-	      );
-	    }
-	  }]);
-
-	  return Projects;
-	}(_react.Component);
-
-	exports.default = Projects;
-
-/***/ },
-/* 184 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var white = '#f7f7f7';
-	var grey1 = '#dfdfdf';
-	var grey2 = '#c9c9c9';
-	var grey3 = '#b1b1b1';
-	var grey4 = '#999894';
-	var grey5 = '#83837f';
-	var grey6 = '#6f6e6b';
-	var grey7 = '#5d5c59';
-	var grey8 = '#4d4c49';
-	var grey9 = '#403f3d';
-	var grey10 = '#383734';
-	var grey11 = '#302f2c';
-
-	var colors = {
-	  white: white,
-	  grey1: grey1,
-	  grey2: grey2,
-	  grey3: grey3,
-	  grey4: grey4,
-	  grey5: grey5,
-	  grey6: grey6,
-	  grey7: grey7,
-	  grey8: grey8,
-	  grey9: grey9,
-	  grey10: grey10,
-	  grey11: grey11
-	};
-
-	exports.default = colors;
-
-/***/ },
-/* 185 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	var urls = {
-	  mm: 'http://mindfulmoments.life/',
-	  ca: 'https://jdobrowner.github.io/automaton/',
-	  gs: 'https://jdobrowner.github.io/web-synth/',
-	  lu: 'https://jdobrowner.github.io/learn-ukulele/',
-	  lq: 'https://jdobrowner.github.io/Boolean_Algebra_Quiz/',
-	  ab: 'https://itunes.apple.com/us/app/alpha-bees/id1049165733?mt=8'
-	};
-
-	var repos = {
-	  mm: 'https://github.com/mzarako/mindful-moments',
-	  ca: 'https://github.com/jdobrowner/automaton',
-	  gs: 'https://github.com/jdobrowner/web-synth',
-	  lu: 'https://github.com/jdobrowner/learn-ukulele',
-	  lq: 'https://github.com/jdobrowner/Boolean_Algebra_Quiz'
-	};
-
-	module.exports = { urls: urls, repos: repos };
-
-/***/ },
-/* 186 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	module.exports = __webpack_require__.p + "91c11216d748d4d33c05082ab8b62f16.png";
-
-/***/ },
-/* 187 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	module.exports = __webpack_require__.p + "1015ac921b1e604aae5fa5a40b903d41.png";
-
-/***/ },
-/* 188 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	module.exports = __webpack_require__.p + "1bc6a30f895a9d32463a7d6e5bce0141.png";
-
-/***/ },
-/* 189 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	module.exports = __webpack_require__.p + "ff533cf7fa7b808b937c67c119d53223.png";
-
-/***/ },
-/* 190 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	module.exports = __webpack_require__.p + "c318d403c5331c94a751acc1886780a1.png";
-
-/***/ },
-/* 191 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	module.exports = __webpack_require__.p + "e6abec17f398b3f7d3c3067ecefa3c1c.png";
-
-/***/ },
-/* 192 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	var cellularAutomaton = {
-	  description: 'An app for generating cellular automata on a triangular grid with user controls.',
-	  tools: 'React, Redux, SVG, ES6, Webpack'
-	};
-
-	var mindfulMoments = {
-	  description: 'An app for creating and storing notes of gratitude.',
-	  tools: 'React, Redux, NodeJS, Express, Passport, Bcrypt, JWT, ES6, Webpack'
-	};
-
-	var galaxySynth = {
-	  description: 'A web-based polyphonic synthesizer with custom sound controls and midi keyboard plug-in capability.',
-	  tools: 'ToneJS, WebMidi, Less, jQuery, ES6, Webpack'
-	};
-
-	var learnUkulele = {
-	  description: 'A resource for ukulele players to listen to and learn new chords.',
-	  tools: 'ToneJS, jQuery, Canvas'
-	};
-
-	var logicQuiz = {
-	  description: 'A simple quiz about the not so simple topic of Boolean Algebra.',
-	  tools: 'jQuery, CSS, HTML'
-	};
-
-	var alphaBees = {
-	  description: 'A fast-paced, bee themed word game for both kids and adults on the iOS platform.',
-	  tools: 'Objective-C, SpriteKit'
-	};
-
-	module.exports = {
-	  cellularAutomaton: cellularAutomaton,
-	  mindfulMoments: mindfulMoments,
-	  galaxySynth: galaxySynth,
-	  learnUkulele: learnUkulele,
-	  logicQuiz: logicQuiz,
-	  alphaBees: alphaBees
-	};
-
-/***/ },
-/* 193 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _about = __webpack_require__(194);
-
-	var _about2 = _interopRequireDefault(_about);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	var headshot = __webpack_require__(184);
 
 	var Projects = function (_Component) {
 	  _inherits(Projects, _Component);
@@ -22108,81 +21727,7 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'about' },
-	        _react2.default.createElement('div', { className: 'spacer' }),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'sub-header' },
-	          _react2.default.createElement(
-	            'h3',
-	            null,
-	            'ABOUT ME'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'project' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'box' },
-	            _react2.default.createElement(
-	              'p',
-	              null,
-	              _about2.default.intro
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'box' },
-	            _react2.default.createElement(
-	              'h3',
-	              { className: 'likes-title' },
-	              'I\'m a fan of...'
-	            ),
-	            _react2.default.createElement('br', null),
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'project' },
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'box likes' },
-	                _react2.default.createElement(
-	                  'p',
-	                  null,
-	                  'Sci-Fi Literature'
-	                ),
-	                _react2.default.createElement(
-	                  'p',
-	                  null,
-	                  'History'
-	                ),
-	                _react2.default.createElement(
-	                  'p',
-	                  null,
-	                  'Board Games'
-	                )
-	              ),
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'box likes' },
-	                _react2.default.createElement(
-	                  'p',
-	                  null,
-	                  'Sequoia Trees'
-	                ),
-	                _react2.default.createElement(
-	                  'p',
-	                  null,
-	                  'Southern Utah'
-	                ),
-	                _react2.default.createElement(
-	                  'p',
-	                  null,
-	                  'Lakers'
-	                )
-	              )
-	            )
-	          )
-	        )
+	        _react2.default.createElement('img', { src: headshot })
 	      );
 	    }
 	  }]);
@@ -22193,31 +21738,15 @@
 	exports.default = Projects;
 
 /***/ },
-/* 194 */
-/***/ function(module, exports) {
+/* 184 */
+/***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var introParagraph = 'Hello, I am a web developer based in Los Angeles. I enjoy all aspects of development, from concept, design, frontend, and backend. With a background in music, physics, and architecture, I enjoy bringing together varied perscpecives and skills to build both interesting and useful products. Learn more about me below, and email me if you would like to talk.';
-
-	var aboutMe = {
-	  intro: 'I am a man of many passions, among which are music, physics, mathematics and architecture. But really I am just a guy who likes to have fun, go on adventures, laugh, spend time with the people and animals I love, and eat good food.',
-	  likes: 'Sci-Fi Literature, Ancient History, Board Games, Sequoia Trees, Southern Utah, Traveling, and the Lakers',
-	  musicIntro: 'I happen to be a trained orchestral composer and have a very close relationship with the guitar. Some of my music on is featured on SpongeBob SquarePants.',
-	  musicLikes: 'Gustav Holtz - The Planets, Gustav Mahler - 2nd Symphony, Claude Debussy - La Mer',
-	  physicsIntro: 'I am quite fascinated by physics. Thinking about and learning physics is one of my favorite hobbies which lead to my recent goal and accomplishment of earning a degree in physics',
-	  physicsLikes: 'String Theory, Quantum Entanglement, Special Relativity',
-	  designIntro: 'Good design is a beautiful thing. I am especially fond of geometric design that is somehow also organic. Aside from web design, I have been fortunate enough to have the opportuntiy to design a couple homes.',
-	  designLikes: 'M.C. Escher, Antonio Gaudi, Charles Eames'
-	};
-
-	exports.default = aboutMe;
+	module.exports = __webpack_require__.p + "53be85dcca2bd540cf591906c75669d3.png";
 
 /***/ },
-/* 195 */
+/* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -22260,11 +21789,11 @@
 	          null,
 	          _react2.default.createElement(
 	            "a",
-	            { className: "email-me", href: "mailto:jdobrowner@gmail.com" },
+	            { className: "email-me", href: "mailto:brian4bes@gmail.com" },
 	            _react2.default.createElement(
 	              "span",
 	              null,
-	              "jdobrowner"
+	              "brian4bes"
 	            ),
 	            "@gmail.com"
 	          )
