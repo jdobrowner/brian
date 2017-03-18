@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Projects extends Component {
-  constructor() {
-    super();
-  }
-  render() {
-    return (
+function Contact() {
+  return (
       <div className="contact">
-        <p><a className="email-me" href="mailto:brian4bes@gmail.com"><span>brian4bes</span>@gmail.com</a></p>
+        <h3>| contact |</h3>
+        <p>Email or call me to discuss your project.</p><br />
+        <a className="email-me" href="mailto:brian4bes@gmail.com">brian4bes@gmail.com</a>
+        <h5>818 438 0216</h5>
       </div>
     )
   }
-}
+
+
+export default Contact;

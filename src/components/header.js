@@ -8,10 +8,8 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <Link to="/">
-        <h1><span className="firstName">BRIAN </span><span className="lastName">FORBES</span></h1>
-      </Link>
-        <Link to="/credits"><h3>credits</h3></Link>
+        <h1>BRIAN FORBES</h1>
+        <h3>EDITOR | PRODUCER | CRAFTSMAN</h3>
       </header>
     )
   }
