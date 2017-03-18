@@ -26557,22 +26557,13 @@
 
 	var _app2 = _interopRequireDefault(_app);
 
-	var _home = __webpack_require__(237);
-
-	var _home2 = _interopRequireDefault(_home);
-
-	var _credits = __webpack_require__(239);
+	var _credits = __webpack_require__(240);
 
 	var _credits2 = _interopRequireDefault(_credits);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	exports.default = _react2.default.createElement(
-	  _reactRouter.Route,
-	  { path: '/', component: _app2.default },
-	  _react2.default.createElement(_reactRouter.IndexRoute, { component: _home2.default }),
-	  _react2.default.createElement(_reactRouter.Route, { path: 'credits', component: _credits2.default })
-	);
+	exports.default = _react2.default.createElement(_reactRouter.Route, { path: '/', component: _app2.default });
 
 /***/ },
 /* 235 */
@@ -26593,6 +26584,22 @@
 	var _header = __webpack_require__(236);
 
 	var _header2 = _interopRequireDefault(_header);
+
+	var _about = __webpack_require__(237);
+
+	var _about2 = _interopRequireDefault(_about);
+
+	var _skills = __webpack_require__(239);
+
+	var _skills2 = _interopRequireDefault(_skills);
+
+	var _credits = __webpack_require__(240);
+
+	var _credits2 = _interopRequireDefault(_credits);
+
+	var _contact = __webpack_require__(241);
+
+	var _contact2 = _interopRequireDefault(_contact);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26621,7 +26628,10 @@
 	          'div',
 	          { className: 'content-container' },
 	          _react2.default.createElement(_header2.default, null),
-	          this.props.children
+	          _react2.default.createElement(_about2.default, null),
+	          _react2.default.createElement(_skills2.default, null),
+	          _react2.default.createElement(_credits2.default, null),
+	          _react2.default.createElement(_contact2.default, null)
 	        )
 	      );
 	    }
@@ -26674,31 +26684,14 @@
 	        'header',
 	        null,
 	        _react2.default.createElement(
-	          _reactRouter.Link,
-	          { to: '/' },
-	          _react2.default.createElement(
-	            'h1',
-	            null,
-	            _react2.default.createElement(
-	              'span',
-	              { className: 'firstName' },
-	              'BRIAN '
-	            ),
-	            _react2.default.createElement(
-	              'span',
-	              { className: 'lastName' },
-	              'FORBES'
-	            )
-	          )
+	          'h1',
+	          null,
+	          'BRIAN FORBES'
 	        ),
 	        _react2.default.createElement(
-	          _reactRouter.Link,
-	          { to: '/credits' },
-	          _react2.default.createElement(
-	            'h3',
-	            null,
-	            'credits'
-	          )
+	          'h3',
+	          null,
+	          'EDITOR | PRODUCER | CRAFTSMAN'
 	        )
 	      );
 	    }
@@ -26719,46 +26712,47 @@
 	  value: true
 	});
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 	var headshot = __webpack_require__(238);
 
-	var Home = function (_Component) {
-	  _inherits(Home, _Component);
+	function About() {
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'about' },
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'width70' },
+	      _react2.default.createElement(
+	        'h3',
+	        null,
+	        '| about |'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'I\'m a senior editor and producer for television with over 20 years of post-production experience.',
+	        _react2.default.createElement('br', null),
+	        _react2.default.createElement('br', null),
+	        'From SYFY to NBC to MTV, I\'ve worked with industry leaders in telling visual stories that are memorable and entertaining. When leading my team, I integrate narrative vision with creative collaboration to make sure we meet deadlines and craft effective stories. My tools of choice include Avid Media Composer and Adobe Premier Pro.',
+	        _react2.default.createElement('br', null),
+	        _react2.default.createElement('br', null),
+	        'Outside of work I get my hands dirty with wood/metal work and custom-built antique revivals. Take a look at my credit list and contact me below.'
+	      )
+	    ),
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'width30' },
+	      _react2.default.createElement('img', { className: 'facepic', src: headshot })
+	    )
+	  );
+	}
 
-	  function Home() {
-	    _classCallCheck(this, Home);
-
-	    return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this));
-	  }
-
-	  _createClass(Home, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'home' },
-	        _react2.default.createElement('img', { className: '', src: headshot })
-	      );
-	    }
-	  }]);
-
-	  return Home;
-	}(_react.Component);
-
-	exports.default = Home;
+	exports.default = About;
 
 /***/ },
 /* 238 */
@@ -26784,19 +26778,467 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	function Skills() {
+	  return _react2.default.createElement(
+	    "div",
+	    { className: "skills" },
+	    _react2.default.createElement(
+	      "div",
+	      { className: "width33" },
+	      _react2.default.createElement(
+	        "div",
+	        { className: "overlay" },
+	        _react2.default.createElement(
+	          "h3",
+	          null,
+	          "| technical skills |"
+	        )
+	      ),
+	      _react2.default.createElement(
+	        "div",
+	        { className: "listdiv" },
+	        _react2.default.createElement(
+	          "ul",
+	          null,
+	          _react2.default.createElement(
+	            "li",
+	            null,
+	            "Offline & Online Editing"
+	          ),
+	          _react2.default.createElement(
+	            "li",
+	            null,
+	            "Field & Bay Producing"
+	          ),
+	          _react2.default.createElement(
+	            "li",
+	            null,
+	            "Color Correction"
+	          ),
+	          _react2.default.createElement(
+	            "li",
+	            null,
+	            "Writing"
+	          )
+	        )
+	      )
+	    ),
+	    _react2.default.createElement(
+	      "div",
+	      { className: "width33" },
+	      _react2.default.createElement(
+	        "div",
+	        { className: "overlay" },
+	        _react2.default.createElement(
+	          "h3",
+	          null,
+	          "| personal skills |"
+	        )
+	      ),
+	      _react2.default.createElement(
+	        "div",
+	        { className: "listdiv" },
+	        _react2.default.createElement(
+	          "ul",
+	          null,
+	          _react2.default.createElement(
+	            "li",
+	            null,
+	            "Effective Communication & Patience"
+	          ),
+	          _react2.default.createElement(
+	            "li",
+	            null,
+	            "Imaginative Problem Solving"
+	          ),
+	          _react2.default.createElement(
+	            "li",
+	            null,
+	            "Highly Developed Aesthetic Awareness"
+	          ),
+	          _react2.default.createElement(
+	            "li",
+	            null,
+	            "Attention to Detail"
+	          )
+	        )
+	      )
+	    ),
+	    _react2.default.createElement(
+	      "div",
+	      { className: "width33" },
+	      _react2.default.createElement(
+	        "div",
+	        { className: "overlay" },
+	        _react2.default.createElement(
+	          "h3",
+	          null,
+	          "| projects |"
+	        )
+	      ),
+	      _react2.default.createElement(
+	        "div",
+	        { className: "listdiv" },
+	        _react2.default.createElement(
+	          "ul",
+	          null,
+	          _react2.default.createElement(
+	            "li",
+	            null,
+	            "TV Shows"
+	          ),
+	          _react2.default.createElement(
+	            "li",
+	            null,
+	            "Award Shows"
+	          ),
+	          _react2.default.createElement(
+	            "li",
+	            null,
+	            "Specials"
+	          ),
+	          _react2.default.createElement(
+	            "li",
+	            null,
+	            "Pilots"
+	          )
+	        )
+	      )
+	    )
+	  );
+	}
+
+	exports.default = Skills;
+
+/***/ },
+/* 240 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 	function Credits() {
 	  return _react2.default.createElement(
 	    "div",
 	    { className: "credits" },
+	    _react2.default.createElement("div", { className: "spacer" }),
 	    _react2.default.createElement(
-	      "p",
-	      null,
-	      "Credits here"
+	      "div",
+	      { className: "width33" },
+	      _react2.default.createElement(
+	        "h3",
+	        null,
+	        "| credits |"
+	      ),
+	      _react2.default.createElement(
+	        "h4",
+	        null,
+	        "Producer / TV Shows / 2016"
+	      ),
+	      _react2.default.createElement("br", null),
+	      _react2.default.createElement(
+	        "h5",
+	        null,
+	        "MTV"
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "\"Ladylike\" | Season 1"
+	      ),
+	      " ",
+	      _react2.default.createElement("br", null),
+	      _react2.default.createElement("br", null),
+	      _react2.default.createElement("br", null),
+	      _react2.default.createElement(
+	        "h4",
+	        null,
+	        "Editor / Award Shows / 2001-2014"
+	      ),
+	      _react2.default.createElement("br", null),
+	      _react2.default.createElement(
+	        "h5",
+	        null,
+	        "MTV"
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "MTV Movie Awards | 2012, 2013, 2014"
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "Video Music Awards | 2012, 2008"
+	      ),
+	      _react2.default.createElement("br", null),
+	      _react2.default.createElement(
+	        "h5",
+	        null,
+	        "VH1"
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "Critics Choice Awards | 2008"
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "My VH1 Music Awards | 2008"
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "Latin Grammys | 2001"
+	      ),
+	      " ",
+	      _react2.default.createElement("br", null),
+	      _react2.default.createElement("br", null),
+	      _react2.default.createElement("br", null),
+	      _react2.default.createElement(
+	        "h4",
+	        null,
+	        "Editor / Specials, Pilots, Singles / 1998-2016"
+	      ),
+	      _react2.default.createElement("br", null),
+	      _react2.default.createElement(
+	        "h5",
+	        null,
+	        "Credits include:"
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "MTV, VH1, CW, Travel Channel, Disney Channel, TBS, CBS, Nickelodeon, TNT, Sony, PAX, Badami Productions, UPN"
+	      )
+	    ),
+	    _react2.default.createElement(
+	      "div",
+	      { className: "width33 right" },
+	      _react2.default.createElement(
+	        "h4",
+	        null,
+	        "Editor / TV Shows / 2000-present"
+	      ),
+	      _react2.default.createElement("br", null),
+	      _react2.default.createElement(
+	        "h5",
+	        null,
+	        "Red Bull Break Boys"
+	      ),
+	      _react2.default.createElement(
+	        "h5",
+	        null,
+	        "Kinetic Content"
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "\"My Man Can with Mario Lopez\""
+	      ),
+	      _react2.default.createElement("br", null),
+	      _react2.default.createElement(
+	        "h5",
+	        null,
+	        "Adult Swim"
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "\"Loiter Squad\" | Season 1-3"
+	      ),
+	      _react2.default.createElement("br", null),
+	      _react2.default.createElement(
+	        "h5",
+	        null,
+	        "FOX"
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "\"American Idol\" | Season 9"
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "\"So You Think You Can Dance\" | Season 7"
+	      ),
+	      _react2.default.createElement("br", null),
+	      _react2.default.createElement(
+	        "h5",
+	        null,
+	        "NBC"
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "\"The Sing Off\" | Season 1-3"
+	      ),
+	      _react2.default.createElement("br", null),
+	      _react2.default.createElement(
+	        "h5",
+	        null,
+	        "SCI-FI"
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "\"Who Wants to be a Superhero\" | Season 1"
+	      ),
+	      _react2.default.createElement("br", null),
+	      _react2.default.createElement(
+	        "h5",
+	        null,
+	        "SYFY"
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "\"Face Off\" | Season 2,8,9"
+	      ),
+	      _react2.default.createElement("br", null),
+	      _react2.default.createElement(
+	        "h5",
+	        null,
+	        "CMT"
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "\"In the Moment\" | 3 Episodes"
+	      ),
+	      _react2.default.createElement("br", null),
+	      _react2.default.createElement(
+	        "h5",
+	        null,
+	        "MTV"
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "\"The Almost Impossible Gameshow\" | Season 1"
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "\"Crashletes\" | Season 1"
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "\"Broke Ass Game Show\" | Season 1-2"
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "\"Beyond Dance\" | Season 1"
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "\"Ridiculousness\" | Season 1-5"
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "\"America's Best Dance Crew\" | Season 1-7"
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "\"Nitro Circus\" | Season 1"
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "\"Celebrity Rap Superstar\" | Season 1"
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "\"Bam's Unholy Union\" | Season 1"
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "\"Parental Control\" | Season 1-2"
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "\"Trippin\" | Season 1"
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "\"MTV News\" | 9 Segments"
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        "\"MTV Movie House\" | 11 Episodes"
+	      )
 	    )
 	  );
 	}
 
 	exports.default = Credits;
+
+/***/ },
+/* 241 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function Contact() {
+	  return _react2.default.createElement(
+	    "div",
+	    { className: "contact" },
+	    _react2.default.createElement(
+	      "h3",
+	      null,
+	      "| contact |"
+	    ),
+	    _react2.default.createElement(
+	      "p",
+	      null,
+	      "Email or call me to discuss your project."
+	    ),
+	    _react2.default.createElement("br", null),
+	    _react2.default.createElement(
+	      "a",
+	      { className: "email-me", href: "mailto:brian4bes@gmail.com" },
+	      "brian4bes@gmail.com"
+	    ),
+	    _react2.default.createElement(
+	      "h5",
+	      null,
+	      "818 438 0216"
+	    )
+	  );
+	}
+
+	exports.default = Contact;
 
 /***/ }
 /******/ ]);
