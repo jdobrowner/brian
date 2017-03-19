@@ -173,10 +173,27 @@ header {
   width: 33%;
 }
 
-@media screen and (max-width: 1040px) {
+
+@media screen and (max-width: 1035px) {
   .skills {
-    .overlay, .listdiv {
-      padding: 40px;
+    .width33 {
+      justify-content: flex-start;
+      .padding;
+      padding-right: 0;
+    }
+    .overlay {
+      display: block;
+      position: static;
+      height: auto;
+      padding: 0;
+      padding-bottom: 60px;
+    }
+    .overlay:hover {
+    	color: grey;
+    }
+    .listdiv {
+      padding: 0;
+      display: block;
     }
   }
 }
@@ -184,10 +201,11 @@ header {
 @media screen and (max-width: 915px) {
   .skills {
     flex-wrap: wrap;
-    .overlay, .listdiv {
-      padding: 60px;
+    .width33 {
+      width: 50%;
+      padding-bottom: 0;
     }
-    .width33 {width: 50%;}
+    .last {padding-bottom: 60px;}
   }
   .about {
     display: block;
@@ -208,24 +226,26 @@ header {
 }
 
 @media screen and (max-width: 685px) {
-  .skills {
-    .overlay, .listdiv {
-      padding: 0;
-    }
-  }
-  header, .skills, .contact, .credits .width33, .width30, .width70, .width50 {
+  header, .skills .width33, .contact, .credits .width33, .width30, .width70, .width50 {
     padding: 40px;
   }
+  .skills .width33 {padding-right: 0;}
   .width70 {padding-bottom: 0;}
-  .about h3, .credits h3, .contact h3 {padding-bottom: 40px;}
+  .about h3, .credits h3, .contact h3, .skills .overlay {padding-bottom: 40px;}
   .about p {padding: 0;}
   .credits .right {padding-left: 0;}
+  .skills .last {padding-top: 0;}
 }
 
-@media screen and (max-width: 570px) {
+@media screen and (max-width: 590px) {
   .skills {
     display: block;
-    .width33 {width: auto;}
+    .width33 {
+      width: auto;
+      padding: 40px;
+      padding-bottom: 0;
+    }
+    .last {padding-bottom: 40px;}
   }
   body {
     p {font-size: 1em;}

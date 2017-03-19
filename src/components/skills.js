@@ -21,7 +21,7 @@ function Skills() {
           <li>Attention to Detail</li>
         </ul></div>
       </div>
-      <div className="width33">
+      <div className="width33 last">
         <div className="overlay"><h3>| projects |</h3></div>
         <div className="listdiv"><ul>
           <li>TV Shows</li>
