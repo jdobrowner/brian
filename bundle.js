@@ -26866,7 +26866,7 @@
 	    ),
 	    _react2.default.createElement(
 	      "div",
-	      { className: "width33" },
+	      { className: "width33 last" },
 	      _react2.default.createElement(
 	        "div",
 	        { className: "overlay" },
