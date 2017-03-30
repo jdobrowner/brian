@@ -27227,8 +27227,8 @@
 	    _react2.default.createElement("br", null),
 	    _react2.default.createElement(
 	      "a",
-	      { className: "email-me", href: "mailto:brian4bes@gmail.com" },
-	      "brian4bes@gmail.com"
+	      { className: "email-me", href: "mailto:brianforbescreative@gmail.com" },
+	      "brianforbescreative@gmail.com"
 	    ),
 	    _react2.default.createElement(
 	      "h5",
