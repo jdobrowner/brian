@@ -21,6 +21,14 @@ function Credits() {
             <h4>Editor / Specials, Pilots, Singles / 1998-2016</h4><br />
               <h5>Credits include:</h5>
               <p>MTV, VH1, CW, Travel Channel, Disney Channel, TBS, CBS, Nickelodeon, TNT, Sony, PAX, Badami Productions, UPN</p>
+            <br /><br /><br />
+            <h4>Editor / TV Shows / 2000-present</h4><br />
+              <h5>BRAVO</h5>
+                <p>“Top Chef” | Season 15</p><br />
+              <h5>THE HISTORY CHANNEL</h5>
+                <p>“Hunting Hitler” | Season 2</p><br />
+              <h5>TRAVEL CHANNEL</h5>
+                <p>“The One-Up” | Pilot</p><br />
         </div>
         <div className="width33 right">
           <h4>Editor / TV Shows / 2000-present</h4><br />
@@ -41,6 +49,8 @@ function Credits() {
           <h5>CMT</h5>
             <p>"In the Moment" | 3 Episodes</p><br />
           <h5>MTV</h5>
+            <p>"Teen Mom - 2017 Reunion”</p>
+            <p>"Teen Mom - That’s a Wrap 2017”</p>
             <p>"Teen Mom OG - The After Show" | Season 2</p>
             <p>"The Almost Impossible Gameshow" | Season 1</p>
             <p>"Crashletes" | Season 1</p>

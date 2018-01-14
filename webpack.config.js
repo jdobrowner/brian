@@ -26,7 +26,7 @@ module.exports = {
         presets: ['react', 'es2015', 'stage-1']
       }
     },
-    { test: /.png$/, loader: "file"}
+    { test: /\.(jpe?g|png|pdf|svg)$/, loader: "file"}
   ]
   },
   resolve: {
@@ -34,7 +34,7 @@ module.exports = {
   },
   plugins: plugins,
   devServer: {
-    historyApiFallback: true,
-    contentBase: './build/'
+    historyApiFallback: { index: '200.html' },
+    contentBase: 'build'
   }
 };
